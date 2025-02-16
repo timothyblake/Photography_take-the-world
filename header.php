@@ -46,7 +46,7 @@
         <div class="container-fluid d-flex justify-content-between align-items-center">
             <div>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					test the key content
+					test the key content jbhb
 					<img src="https://timothyblake.com/_astro/timothy-blake-logo-black.D9h9S3wC_ZVwjfD.svg" alt="Timothy Blake logo" width="50" class="light-mode-logo"/>
 
 				</a>
