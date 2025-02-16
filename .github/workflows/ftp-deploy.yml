@@ -1,0 +1,19 @@
+on: push
+name: Deploy site to SwatKats Server
+jobs:
+    web-deploy:
+        name: Deploying to SwatKats Server
+        runs-on: ubuntu-latest
+        steps:
+        - name: Get the latest code
+          uses: actions/checkout@v4
+
+        - name: Sync files
+          uses: appleboy/scp-action@v0.1.7
+          with:
+            host: ${{ secrets.FTP_SERVER }}
+            username: ${{ secrets.FTP_USERNAME }}
+            target: ${{ secrets.FTP_SERVER_DIR }}
+            key: ${{ secrets.FTP_KEY }}
+            source: "*, **/*, !.git,!.github, !README.md, !LICENSE, !.gitignore, !.gitattributes, !node_modules"
+
